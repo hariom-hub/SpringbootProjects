@@ -9,7 +9,7 @@ public class BloodBuddyApplication {
     public static void ServerInfo(){
 
         try{
-            System.out.println("Server is running on port : "+7070);
+            System.out.println("Server is running on port : "+7075);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
