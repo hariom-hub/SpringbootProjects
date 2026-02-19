@@ -1,0 +1,22 @@
+hii there
+java -jar target/Docker-tutorial.jar
+docker run -it openjdk:22-jdk
+docker pull image-name
+docker ps
+docker cp target/Docker-Tutorial.jar condescending_johnson:/tmp
+docker exec condescending_johnson ls /tmp
+docker commit condescending_johnson harru/docker-tutorial:v1
+docker run harru/docker-tutorial:v1 => "you will get a jshell"
+docker commit --change='CMD ["java","-jar","/tmp/Docker-Tutorial.jar"]' condescending_johnson harru/docker-tutorial:v2
+docker run harru/docker-tutorial:v2
+docker run -p 8090:8090 harru/docker-tutorial:v2
+
+using docker file
+
+docker build -t harru/docker-tutorial:v3
+docker run -p 8090:8090 harru/docker-tutorial:v3
+
+Dockerfile
+FROM openjdk:22-jdk
+ADD target/Docker-Tutorial.jar Docker-Tutorial.jar
+ENTRYPOINT ["java","-jar","/Docker-Tutorial.jar"]
