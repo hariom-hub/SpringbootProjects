@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequiredArgsConstructor
+@RequiredArgsConstructor  // inject dependency constructor
 public class patientRoutes {
 
     private final PatientService patientService;
