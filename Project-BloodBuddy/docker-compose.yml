@@ -1,0 +1,15 @@
+version : "3.8"
+services:
+  app:
+    build: .
+    ports:
+      - "5055:5050"
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_USER : harru
+      MYSQL_PASSWORD: ranajihariom@1
+      MYSQL_DB: BloodBuddy_DB
+    ports:
+      -
