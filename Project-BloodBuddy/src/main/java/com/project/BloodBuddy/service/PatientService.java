@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PatientService {
@@ -25,5 +27,9 @@ public class PatientService {
         System.out.println(p1);
         return p1;
     }
+
+   public List<patient>GetAllpatients(){
+        return patientRepository.findAll();
+   }
 
 }
