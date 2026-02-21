@@ -6,3 +6,6 @@ let's build projects on springboot using spring data jpa.
 #### update = Only adds new columns or tables. It will not remove columns or change data types.,Development
 #### create = Drops existing tables and creates new ones every time the app starts.,Testing
 #### create-drop = Same as create, but also drops the tables when the app shuts down.
+
+Let's move forward with the project with Docker containerization.
+
