@@ -9,7 +9,7 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_USER : harru
-      MYSQL_ROOT_PASSWORD: ranajihariom@1
+      MYSQL_PASSWORD: 1234
       MYSQL_DATABASE: BloodBuddy
     ports:
-      - 3306:3306
+      - 3308:3306
