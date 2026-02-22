@@ -3,13 +3,13 @@ services:
   app:
     build: .
     ports:
-      - "5055:5050"
+      - "7070:7070"
 
   mysql:
-    image: mysql
+    image: mysql:8.0
     environment:
       MYSQL_USER : harru
-      MYSQL_PASSWORD: ranajihariom@1
-      MYSQL_DB: BloodBuddy_DB
+      MYSQL_ROOT_PASSWORD: ranajihariom@1
+      MYSQL_DATABASE: BloodBuddy
     ports:
-      -
+      - 3306:3306
