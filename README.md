@@ -1,5 +1,5 @@
 # SpringbootProjects
-let's build projects on springboot using spring data jpa.
+
 ## references = https://github.com/hariom-hub/restful-api-s-in-spring-boot
 ### spring.data.jpa.hibernate.ddl-auto = update/validate/none/create/create-drop
 #### none = Does nothing. No changes are made to the database.,Production
