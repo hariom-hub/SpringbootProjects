@@ -8,5 +8,5 @@
 #### create = Drops existing tables and creates new ones every time the app starts.,Testing
 #### create-drop = Same as create, but also drops the tables when the app shuts down.
 
-Let's move forward with the project with Docker containerization.
+Let's move forward with the project with Docker containerization. "let's move forward"
 
