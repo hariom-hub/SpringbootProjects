@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BloodBuddyApplication {
 
 	public static void server(){
-		System.out.println("Server is running on port : "+5050);
+		System.out.println("Server is running on port : "+7070);
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(BloodBuddyApplication.class, args);

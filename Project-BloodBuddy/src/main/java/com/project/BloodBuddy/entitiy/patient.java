@@ -15,11 +15,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-//@Table
-//        (name = "patient",
-//        uniqueConstraints = {@UniqueConstraint(name = "unique_patient_email",columnNames = {"email"}),}
-//
-//        )
+@Table
+        (name = "patient",
+        uniqueConstraints = {@UniqueConstraint(name = "unique_patient_email",columnNames = {"email"}),
+                             @UniqueConstraint(name = "unique_patient_name_birthDate",columnNames = {"name","birthdate"})
+        }
+
+
+        )
 
 public class patient {
 
