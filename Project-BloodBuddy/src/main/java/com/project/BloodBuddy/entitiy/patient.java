@@ -1,6 +1,7 @@
 package com.project.BloodBuddy.entitiy;
 
 import com.project.BloodBuddy.entitiy.type.BloodGroupType;
+import com.project.BloodBuddy.entitiy.type.GenderType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -38,7 +39,12 @@ public class patient {
     @Column(updatable = false)
     private LocalDate birthdate;
     private int age;
-    private String gender;
+    // private String gender;
+    // changing the type of gender from string to enum to restrict user to select only the given genders (male, female or prefer not to say)
+
+    @Enumerated(EnumType.STRING)
+    private GenderType gender;
+
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
 }
