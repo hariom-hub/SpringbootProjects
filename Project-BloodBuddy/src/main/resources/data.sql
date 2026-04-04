@@ -1,3 +1,2 @@
-INSERT INTO patient (name,email,age,birthdate,gender,blood_group)
-values
-    ("Pawan Chaturvedi","pawan.chaturvedi@gmail.com","25","2001-03-13","Male","O_POSITIVE");
+INSERT  INTO patient(name,email,age,birthdate,gender,blood_group)
+values ("karpathy","karp@gmail.com","39","1986-01-05","Male","O_POSITIVE");

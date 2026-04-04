@@ -1,10 +1,12 @@
 package com.project.BloodBuddy.service;
 
 import com.project.BloodBuddy.entitiy.patient;
+import com.project.BloodBuddy.entitiy.type.BloodGroupType;
 import com.project.BloodBuddy.repository.PatientRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +32,11 @@ public class PatientService {
 
    public List<patient>GetAllpatients(){
         return patientRepository.findAll();
+   }
+
+   public List<patient>GetPatientByBloodGrop(@Param("bloodGroup") BloodGroupType bloodGroup){
+        List<patient> PatientList = patientRepository.findByBloodGroup(bloodGroup);
+        return PatientList;
    }
 
 }
