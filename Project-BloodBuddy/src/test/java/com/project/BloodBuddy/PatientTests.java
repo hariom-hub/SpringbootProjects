@@ -11,6 +11,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 @SpringBootTest
 public class PatientTests {
@@ -19,7 +23,6 @@ public class PatientTests {
     private PatientRepository patientRepository;
     @Autowired
     private PatientService patientService;
-
 
 
     // All of this data will go into persistent Context
@@ -54,6 +57,15 @@ public class PatientTests {
     @Test
     public void GetPatientByBirthDate(){
         List<patient>patientList = patientRepository.GetPatientGreaterByBirthDate(LocalDate.of(2004,12,06));
+    }
+
+    @Test
+    public void GetAllPatients(){
+
+        Page<patient>patientlist = patientRepository.AllPatients(PageRequest.of(0,2));
+        for(patient p : patientlist){
+            System.out.println(p);
+        }
     }
 
 

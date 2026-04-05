@@ -4,6 +4,8 @@ import com.project.BloodBuddy.entitiy.patient;
 import com.project.BloodBuddy.entitiy.type.BloodGroupType;
 import com.project.BloodBuddy.entitiy.type.GenderType;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -29,7 +31,9 @@ public interface PatientRepository extends JpaRepository<patient,Long> {
     List<patient>GetPatientGreaterByBirthDate(@Param("birthdate") LocalDate birthdate);
 
     @Query(value = "select * from patient",nativeQuery = true)
-    List<patient>Allpatients();
+//    List<patient>Allpatients();
+    // helps in writing optimized query to fetch data on the basis of limit provided
+    Page<patient> AllPatients(Pageable page);
 
     @Transactional
     @Modifying

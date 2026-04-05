@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Entity
@@ -47,5 +48,14 @@ public class patient {
 
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
+
+    @OneToOne
+    @JoinColumn(name = "patient_insuranceID",nullable = false)
+    Insurance insurance;
+
+    @OneToMany(mappedBy = "patient")
+    private List<appointment> appointmentList;
+
+
 }
 
