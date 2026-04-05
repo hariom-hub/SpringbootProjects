@@ -1,7 +1,9 @@
 package com.project.BloodBuddy;
+import java.time.LocalDate;
 import java.util.*;
 import com.project.BloodBuddy.entitiy.patient;
 import com.project.BloodBuddy.entitiy.type.BloodGroupType;
+import com.project.BloodBuddy.entitiy.type.GenderType;
 import com.project.BloodBuddy.repository.PatientRepository;
 import com.project.BloodBuddy.service.PatientService;
 import jakarta.transaction.Transactional;
@@ -39,6 +41,19 @@ public class PatientTests {
     public void BloodGroupTest(){
         List<patient>patientlist = patientRepository.findByBloodGroup(BloodGroupType.AB_POSITIVE);
         for(patient p : patientlist) System.out.println(p);
+    }
+
+    @Test
+    public void GetByGender(){
+        List<patient>patientlist = patientRepository.findByGender(GenderType.Female);
+        for(patient p : patientlist){
+            System.out.println(p);
+        }
+    }
+
+    @Test
+    public void GetPatientByBirthDate(){
+        List<patient>patientList = patientRepository.GetPatientGreaterByBirthDate(LocalDate.of(2004,12,06));
     }
 
 

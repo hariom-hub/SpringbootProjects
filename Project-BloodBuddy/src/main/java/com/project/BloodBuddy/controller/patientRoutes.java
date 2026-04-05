@@ -3,6 +3,7 @@ package com.project.BloodBuddy.controller;
 import java.util.*;
 import com.project.BloodBuddy.entitiy.patient;
 import com.project.BloodBuddy.entitiy.type.BloodGroupType;
+import com.project.BloodBuddy.entitiy.type.GenderType;
 import com.project.BloodBuddy.service.PatientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.Query;
@@ -30,7 +31,11 @@ public class patientRoutes {
     @GetMapping ("/patients/{bloodGroup}")
     public List<patient>GetPatientByBloodGroup(@PathVariable BloodGroupType bloodGroup){
 
-
         return patientService.GetPatientByBloodGrop(bloodGroup);
+    }
+
+    @GetMapping("/patients/gender/{gender}")
+    public List<patient>GetPatientByGender(@PathVariable GenderType gender){
+        return patientService.GetPatientByGender(gender);
     }
 }
