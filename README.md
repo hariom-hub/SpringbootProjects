@@ -9,4 +9,5 @@
 #### create-drop = Same as create, but also drops the tables when the app shuts down.
 
 Let's move forward with the project with Docker containerization. "let's move forward"
+Today I will be completing  the Entity Relation model of BloodBuddy.
 
